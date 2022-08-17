@@ -1,0 +1,30 @@
+{
+    "run": "Lambda nodeJs",
+    "path": "/node/js",
+    "resource": "/mock/url",
+    "queryStringParameters": null,
+    "pathParameters": null,
+    "requestContext": {
+        "resourceId": "brn2ia",
+        "authorizer": {
+          "role": "ADMIN",
+          "api_key": null,
+          "user_id": "1636aef2-be1c-4563-8b7c-1214cc014f0a",
+          "namespace": "NS_localstack",
+          "principalId": "1636aef2-be1c-4563-8b7c-1214cc014f0a",
+          "merchant_token": "afdff06c-6bed-4def-847a-a0c00de6e17d",
+          "merchant_id": "32651e06-5f01-4830-878f-2cc51e87d8e1",
+          "api_user_id": "a3e32af6-bf6d-4efc-8420-793530944c2e"
+        },
+        "resourcePath": "/mock/v1/endpoint",
+        "httpMethod": "POST",
+        "extendedRequestId": "HDKNGFAZPHcF5ig=",
+        "requestTime": "17/May/2018:21:14:34 +0000",
+        "path": "/mock/v1/endpoint",
+        "requestTimeEpoch": 1526591674234,
+        "requestId": "4c1a4e6e-5a17-11e8-a181-83e1c65b3cc1",
+        "apiId": "b2wyzapjm2"
+      },
+      "body": "{\"amount\":100.02,\"currency\":\"MXN\",\"purchase_description\":\"mockmessage\",\"redirection_url\":{\"success\":\"https://success/redirection/\",\"error\":\"https://error/redirection/\"}}"
+
+}

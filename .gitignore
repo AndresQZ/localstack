@@ -56,3 +56,4 @@ web_modules/
 #lambda nodeJs
 function.zip
 output.txt
+lambda-nodejs/lambda/function/**
