@@ -1,4 +1,6 @@
 # localstack
 
 
-# Learning localstack using git submodules 
+# Learning localstack
+
+ run docker-compose up
