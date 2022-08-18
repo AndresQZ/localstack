@@ -25,6 +25,7 @@
         "requestId": "4c1a4e6e-5a17-11e8-a181-83e1c65b3cc1",
         "apiId": "b2wyzapjm2"
       },
-      "body": "{\"amount\":100.02,\"currency\":\"MXN\",\"purchase_description\":\"mockmessage\",\"redirection_url\":{\"success\":\"https://success/redirection/\",\"error\":\"https://error/redirection/\"}}"
+      "id": "docker localstack",
+      "body": "{\"amount\":100.02,\"currency\":\"MXN\",\"id\":\"test\",\"purchase_description\":\"mockmessage\",\"redirection_url\":{\"success\":\"https://success/redirection/\",\"error\":\"https://error/redirection/\"}}"
 
 }

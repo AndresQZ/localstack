@@ -35,4 +35,7 @@ lambda create-function --function-name lambda-node-js \
 
 echo "executing lambda function"
 cd ../
+
+#aws lambda invoke --function-name lambda-node-js --endpoint-url=http://localhost:4574 --cli-binary-format raw-in-base64-out --payload '{"id": "test"}' output.txt
+
 aws lambda invoke --function-name lambda-node-js --cli-binary-format raw-in-base64-out --endpoint-url=http://localhost:4574 --invocation-type Event --payload file://event.json output.txt
