@@ -12,5 +12,8 @@ aws  s3api --endpoint http://localhost:4572 list-buckets
 # upload file to a specific S3 butcket
 aws s3api --endpoint http://localhost:4572 put-object --bucket localstack-bucket --key 5G-overview --body 5g-for-dummies.pdf
 
+# get file from bucket 
+aws s3api --endpoint http://localhost:4572 get-object --bucket localstack-bucket --key 5G-overview /Users/andres.quiroz/Documents/localstack/s3/5g.pdf --debug
+
 # web console UI
 http://localhost:8080/#!/infra
