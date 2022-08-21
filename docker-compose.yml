@@ -13,11 +13,12 @@ volumes:
 services:
 
   localstack:
-    image: localstack/localstack:0.10.7
+    image: localstack/localstack:0.11.0
     ports:
       - 8080:8080
       - 4569:4569 # dynamodb
       - 4574:4574 # lamba
+      - 4572:4572 # S3
       - 4566:4566 # localstack
     environment:
       - AWS_ACCESS_KEY_ID=localstackId
@@ -28,9 +29,10 @@ services:
       - DOCKER_HOST=unix:///var/run/docker.sock
       - LAMBDA_EXECUTOR=docker
       - PORT_WEB_UI=8080
-      - SERVICES=lambda,dynamodb
+      - SERVICES=lambda,dynamodb,s3
       - LAMBDA_DOCKER_NETWORK=localstack-tutorial
       - LAMBDA_REMOTE_DOCKER=true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - localstack:/tmp/localstack/data
+      - ./aws:/docker-entrypoint-initaws.d
