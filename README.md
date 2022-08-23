@@ -1,6 +1,9 @@
 # localstack services information
 github reference https://github.com/atlassian/localstack/blob/master/README.md
 
-# Learning localstack
+#  healt services  - 0.12.0 
 
- run docker-compose up
+http://localhost:4566/health
+
+# Learning localstack
+run docker-compose up

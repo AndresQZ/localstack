@@ -13,7 +13,7 @@ volumes:
 services:
 
   localstack:
-    image: localstack/localstack:0.11.0
+    image: localstack/localstack:0.12.10
     ports:
       - 8080:8080
       - 4569:4569 # dynamodb
@@ -29,7 +29,7 @@ services:
       - DOCKER_HOST=unix:///var/run/docker.sock
       - LAMBDA_EXECUTOR=docker
       - PORT_WEB_UI=8080
-      - SERVICES=lambda,dynamodb,s3
+      - SERVICES=lambda,dynamodb,s3,logs,ssm
       - LAMBDA_DOCKER_NETWORK=localstack-tutorial
       - LAMBDA_REMOTE_DOCKER=true
     volumes:
