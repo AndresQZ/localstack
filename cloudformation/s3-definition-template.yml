@@ -1,0 +1,40 @@
+Parameters:
+  BucketName:
+    Description: upload-image-with-expiration
+    Type: String
+  ExpirationInDays:
+    Description: Expiration
+    Default: 1
+    Type: Number
+
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      LifecycleConfiguration:
+        Rules:
+          - Id: DeleteBarCodeAfterdays
+            Status: Enabled
+            ExpirationInDays: !Ref ExpirationInDays
+
+  S3BucketPolicy:
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      Bucket: !Ref S3Bucket
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Action:
+              - 's3:*'
+            Effect: Deny
+            Resource:
+              - !Sub arn:aws:s3:::${S3Bucket}
+              - !Sub arn:aws:s3:::${S3Bucket}/* 
+            Principal: '*'

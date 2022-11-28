@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: cloudformation localstack
+
+Parameters:
+  BucketName: 
+    Description: bucket Name
+    Default: "upload-image-with-expiration"
+    Type: String
+  ExpirationInDays:
+    Description: bucket Name
+    Default: 1
+    Type: Number
+
+Resources:
+  S3Bucket:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: http://localhost:4566/templates/s3-definition-template
+      Parameters:
+        BucketName: !Ref BucketName
+        ExpirationInDays: !Ref ExpirationInDays

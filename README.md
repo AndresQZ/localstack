@@ -6,4 +6,5 @@ github reference https://github.com/atlassian/localstack/blob/master/README.md
 http://localhost:4566/health
 
 # Learning localstack
-run docker-compose up
+docker volume rm localstack_localstack
+docker-compose up

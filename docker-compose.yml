@@ -29,7 +29,7 @@ services:
       - DOCKER_HOST=unix:///var/run/docker.sock
       - LAMBDA_EXECUTOR=docker
       - PORT_WEB_UI=8080
-      - SERVICES=lambda,dynamodb,s3,logs,ssm
+      - SERVICES=lambda,dynamodb,s3,logs,ssm,cloudformation,secretsmanager
       - LAMBDA_DOCKER_NETWORK=localstack-tutorial
       - LAMBDA_REMOTE_DOCKER=true
     volumes:
