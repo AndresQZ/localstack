@@ -15,6 +15,12 @@ aws --endpoint-url=http://localhost:4574 \lambda create-function --function-name
 # invoke lambda
 aws lambda invoke --function-name nodejs-lb  --cli-binary-format raw-in-base64-out --endpoint-url=http://localhost:4574 --payload '{"id": "test"}' output.txt
 
+# get lambda information
+ aws lambda get-function --function-name lambda-node-js --endpoint-url http://localhost:4566
+
+# list lambdas- functions
+aws lambda list-functions --endpoint-url http://localhost:4566
+
 
 # delete lambda
 aws --endpoint-url http://localhost:4574 lambda delete-function \
@@ -23,6 +29,9 @@ aws --endpoint-url http://localhost:4574 lambda delete-function \
 # list-table inside Dynamodb
 aws dynamodb list-tables --endpoint-url http://localhost:4569
 
+
+# see logs 
+aws --endpoint-url=http://localhost:4566 logs tail '/aws/lambda/lambda-node-js' --follow
 
 
 # web console UI
